@@ -1,0 +1,8 @@
+# Ignore files with a specific extension
+*.log
+# Ignore Angular specific files
+node_modules/
+dist/
+tasks/
+tmp
+*.tmp

@@ -1,0 +1,19 @@
+<div class="setting">
+  <label class="setting-label">
+    <ng-content></ng-content>
+
+    ({{ value }})
+  </label>
+
+  <div class="setting-value">
+    <input
+      #input
+      type="range"
+      class="setting-input"
+      [attr.min]="min"
+      [attr.max]="max"
+      [attr.step]="step"
+      [value]="value"
+      (input)="onInput(input.value)">
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="features">
+  <div class="feature"
+    *ngFor="let feature of features"
+    [routerLink]="feature.path">
+    {{ feature.title }}
+  </div>
+</div>

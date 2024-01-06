@@ -1,0 +1,7 @@
+<ul class="templates">
+  <li class="template"
+    *ngFor="let template of storage.state.templates"
+    [routerLink]="'template/' + template.id">
+    {{ template.name }}
+  </li>
+</ul>

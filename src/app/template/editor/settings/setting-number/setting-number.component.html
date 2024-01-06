@@ -1,0 +1,14 @@
+<div class="setting">
+  <label class="setting-label">
+    <ng-content></ng-content>
+  </label>
+
+  <div class="setting-value">
+    <input
+      #input
+      type="number"
+      class="setting-input"
+      [value]="value"
+      (input)="onInput(input.value)">
+  </div>
+</div>

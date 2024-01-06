@@ -1,0 +1,138 @@
+:host {
+  height: 100%;
+  display: flex;
+}
+
+.panel {
+  box-shadow: 0 0 3px #ccc;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-tabs {
+  display: flex;
+}
+
+.panel-tab {
+  width: 50%;
+  padding: 5px 10px 7px;
+  text-align: center;
+  font-size: 14px;
+  cursor: default;
+
+  &:not(.active) {
+    background: #00a18d;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+.panel-content {
+  flex-grow: 1;
+  padding: 20px 15px;
+  overflow: auto;
+}
+
+.main {
+  flex: 1;
+  position: relative;
+}
+
+.toolbar {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.workspace {
+  position: absolute;
+  background: rgba(189, 189, 189, 0.11);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.canvas-container {
+  overflow: auto;
+  padding: 40px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0;
+  height: 100%;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+
+.canvas-layout {
+  width: 300px;
+  height: 300px;
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2)),
+    linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2));
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.48);
+  display: inline-block;
+  vertical-align: middle;
+  transition: .3s;
+}
+
+.instructions {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.filed {
+  margin-bottom: 15px;
+}
+
+.filed-label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.canvas-box {
+  height: 100%;
+  position: relative;
+
+  ::ng-deep {
+    canvas,
+    .konvajs-content {
+      width: 100% !important;
+      height: 100% !important;
+    }
+  }
+}
+
+.scale {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 10px;
+  bottom: 10px;
+  font-size: 14px;
+}
+
+.scale-input {
+  width: 80px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+.scale-label {
+  margin-right: 5px;
+}

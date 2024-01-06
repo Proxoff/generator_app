@@ -1,0 +1,24 @@
+.setting {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.setting-input {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.setting-label {
+  width: 190px;
+  font-size: 14px;
+  padding: 0 15px 0 0;
+}
+
+.setting-value {
+  flex-grow: 1;
+  width: 0;
+}

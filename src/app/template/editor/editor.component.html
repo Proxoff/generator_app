@@ -1,0 +1,53 @@
+<aside class="panel">
+  <div class="panel-tabs">
+    <div class="panel-tab"
+      [ngClass]="{active: state.aside.activeTab === 'image'}"
+      (click)="setPanelTab('image')">
+      Фон
+    </div>
+    <div class="panel-tab"
+      [ngClass]="{active: state.aside.activeTab === 'text'}"
+      (click)="setPanelTab('text')">
+      Текст
+    </div>
+  </div>
+
+  <div class="panel-content">
+    <app-background-settings
+      [template]="template"
+      *ngIf="state.aside.activeTab === 'image'">
+    </app-background-settings>
+
+    <app-text-settings
+      [template]="template"
+      *ngIf="state.aside.activeTab === 'text'">
+    </app-text-settings>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="workspace">
+    <div class="canvas-container">
+      <div class="canvas-layout"
+        [ngStyle]="{
+          'width.px': getCanvasSizePx().width,
+          'height.px': getCanvasSizePx().height
+        }">
+        <div class="canvas-box" #canvasElement></div>
+      </div>
+    </div>
+
+    <div class="scale">
+      <span class="scale-label">Масштаб:</span>
+      <input
+        #scaleInput
+        class="scale-input"
+        min="30"
+        max="100"
+        step="10"
+        type="range" [value]="template.canvas.scale"
+        (input)="setScale(scaleInput.value)" />
+      <span class="scale-value">{{ template.canvas.scale }}%</span>
+    </div>
+  </div>
+</main>

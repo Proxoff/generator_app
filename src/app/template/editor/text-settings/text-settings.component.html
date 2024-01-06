@@ -1,0 +1,75 @@
+<!-- <div class="filed">
+  <label class="filed-label" for="#text">Текст истории</label>
+  <textarea #text id="text"
+    [value]="template.text.value"
+    (input)="canvas.setText(text.value)">
+  </textarea>
+</div> -->
+
+<section class="template">
+  <fieldset class="setting-group">
+    <legend class="setting-group-label">Текст истории</legend>
+
+    <textarea #text id="text"
+      [value]="template.text.value"
+      (input)="canvas.setText(text.value)">
+    </textarea>
+  </fieldset>
+
+  <fieldset class="setting-group">
+    <legend class="setting-group-label">Шрифт</legend>
+
+    <div class="setting-list">
+      <app-setting-number
+        [value]="template.text.maxFontSize"
+        (oninput)="canvas.setMaxFontSize($event)">
+        Максимальный размер:
+      </app-setting-number>
+
+      <app-setting-number
+        [value]="template.text.minFontSize"
+        (oninput)="canvas.setMinFontSize($event)">
+        Минимальный размер:
+      </app-setting-number>
+
+      <app-setting-range
+        [value]="template.text.lineHeight"
+        [max]="2"
+        [min]="0.5"
+        [step]="0.05"
+        (oninput)="canvas.setLineHeight($event)">
+        Межстрочный интервал:
+      </app-setting-range>
+    </div>
+  </fieldset>
+
+  <fieldset class="setting-group">
+    <legend class="setting-group-label">Положение текста</legend>
+
+    <div class="setting-list">
+      <app-setting-number
+        [value]="template.text.borders.x"
+        (oninput)="template.text.borders.x = $event; canvas.updateTexts()">
+        Слева:
+      </app-setting-number>
+
+      <app-setting-number
+        [value]="template.text.borders.y"
+        (oninput)="template.text.borders.y = $event; canvas.updateTexts()">
+        Сверху:
+      </app-setting-number>
+
+      <app-setting-number
+        [value]="template.text.borders.width"
+        (oninput)="template.text.borders.width = $event; canvas.updateTexts()">
+        Ширина:
+      </app-setting-number>
+
+      <app-setting-number
+        [value]="template.text.borders.height"
+        (oninput)="template.text.borders.height = $event; canvas.updateTexts()">
+        Высота:
+      </app-setting-number>
+    </div>
+  </fieldset>
+</section>

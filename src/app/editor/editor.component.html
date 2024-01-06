@@ -1,0 +1,20 @@
+<div class="workspace">
+  <div class="canvas-wrapper">
+    <div class="canvas" #canvas></div>
+
+    <app-text-transformer
+      *ngIf="editor.transformableText"
+      [text]="editor.transformableText"
+      >
+    </app-text-transformer>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="control">
+    <i class="fas fa-images"></i>
+  </div>
+  <div class="control" (click)="editor.addText()">
+    <span>T</span>
+  </div>
+</div>

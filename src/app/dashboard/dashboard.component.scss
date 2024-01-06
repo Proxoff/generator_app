@@ -1,0 +1,17 @@
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.feature {
+  background: #f5f5f5;
+  padding: 10px;
+
+  &:hover {
+    transition: .15s;
+    cursor: pointer;
+    box-shadow: 0 0 3px #ccc;
+  }
+}

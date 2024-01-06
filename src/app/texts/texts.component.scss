@@ -1,0 +1,65 @@
+.container {
+  height: 100%;
+  display: flex;
+  padding: 20px;
+  margin: auto;
+  width: 1000px;
+}
+
+.post {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.post-input {
+  margin-bottom: 15px;
+}
+
+.add-text {
+  padding: 10px 15px;
+}
+
+.text {
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.text-value {
+  flex-grow: 1;
+}
+
+.text-actions {
+  display: flex;
+}
+
+.text-action {
+  padding: 8px;
+  margin: -8px 3px;
+  transition: .15s;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.selected {
+    color: #8cd880;
+  }
+}
+
+.global-actions {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.generate-selected {
+  margin-right: 15px;
+}

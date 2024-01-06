@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="post">
+    <div class="post-input">
+      <textarea #postTextarea></textarea>
+    </div>
+    <div class="post-actions">
+      <button class="add-text" (click)="addText()">Добавить</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="global-actions">
+      <!-- <button class="generate-selected">Генерировать выбранные</button> -->
+      <button class="generate-all" (click)="generateAllTexts()">Генерировать все</button>
+    </div>
+
+    <div class="texts">
+      <div class="text" *ngFor="let text of storage.state.texts">
+        <div class="text-value">
+          {{ text.value }}
+        </div>
+        <div class="text-actions">
+          <div class="text-action" (click)="removeText(text)">
+            <i class="fas fa-trash-alt"></i>
+          </div>
+          <!-- <div class="text-action"
+            [class.selected]="isSelectedText(text)"
+            (click)="switchText(text)">
+            <i class="fas fa-check"></i>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
